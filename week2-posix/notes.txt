@@ -1,0 +1,11 @@
+This is a simple log file for testing POSIX tools
+Error occured in module A at line 15
+System fail to connect to database 
+Warning: memory usage is high 
+Another error in module B
+Database connection fail
+System running normally
+Error log shows multiple issues
+Warning: disk space low
+Application fail to start
+Error: permission denied 
