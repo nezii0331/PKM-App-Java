@@ -23,5 +23,15 @@ echo "3. Filter word freqency analysis:"
 cut -d' ' -f1 notes.txt | sort | uniq -c | sort -n
 echo ""
 
+#Add replace function
+echo "4. Replacing 'fail' with 'warning': "
+sed 's/fail/warning/g' notes.txt
+echo ""
 
+#Add word count per line:
+echo "5. Word count per line:"
+awk '{print "Line " NR ": " NF " words"}' notes.txt
+echo ""
 
+echo "==============================="
+echo "Analysis complete successfully!"
