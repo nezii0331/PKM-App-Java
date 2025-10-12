@@ -65,6 +65,15 @@ public Note(){
    this.commands = new ArrayList<>();
    this.practiceNotes = "";
    }
+
+   public String getId(){
+    return id;
+   }
+
+   public String getStatus(){
+    return status;
+   }
+
 }
 
  
