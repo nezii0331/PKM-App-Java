@@ -66,12 +66,58 @@ public Note(){
    this.practiceNotes = "";
    }
 
+   // Getters and Setters for main field
    public String getId(){
-    return id;
+    return id;  //stright return the id of this obj
+   }
+   //id is only identifier, so not set to let outer used to change it
+
+   public String getTitle(){
+    return title;
+   }
+
+   public void setTitle(String title){
+    this.title = title; //this is write into the note obj than into database
+   }
+
+   public String getContent(){
+    return content; 
+   }
+
+  public void setContent(String content){
+   this.content = content;
+   }
+
+   public String getWeek(){
+    return week;
+   } 
+
+   public void setWeek(String week){
+   this.week = week;
+   }
+
+   public String getSubject(){
+   return subject;
+   }
+
+   public void setSubject(String subject){
+   this.subject = subject;
+   }
+
+   public String getCategory(){
+   return category;
+   }
+
+   public void setCategory(String category){
+    this.category = category;
    }
 
    public String getStatus(){
     return status;
+   }
+
+   public void setString(String status){
+    this.status = status;
    }
 
 }
