@@ -117,7 +117,7 @@ public Note(){
     return status;
    }
 
-   public void setString(String status){
+   public void setStatus(String status){
     this.status = status;
    }
 
@@ -137,17 +137,17 @@ public Note(){
    this.difficulty = difficulty;
    }
 
-   public LocalDateTime getCreateAt(){
+   public LocalDateTime getCreatedAt(){
    return createdAt;
    }
 
    //not create setter for outer to use
 
-   public LocalDateTime getUpdateAt(){
+   public LocalDateTime getUpdatedAt(){
    return updatedAt;
    }
 
-   public LocalDateTime getStudyAt(){
+   public LocalDateTime getStudyDate(){
    return studyDate;
    }
 

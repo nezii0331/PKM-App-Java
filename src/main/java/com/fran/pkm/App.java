@@ -5,7 +5,7 @@ package com.fran.pkm;
  * Main application class
  */
 public class App {
-    
+
     /**
      * Main method - entry point of the application
      * @param args command line arguments

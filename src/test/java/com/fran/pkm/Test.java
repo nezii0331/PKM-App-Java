@@ -1,4 +1,4 @@
-package src;
+package com.fran.pkm;
 
 public class Test {
     
