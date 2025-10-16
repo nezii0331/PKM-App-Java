@@ -77,8 +77,8 @@ public Note(){
    }
 
    public void setTitle(String title){
-    this.title = title; //this is write into the note obj than into database
-   }
+    this.title = title; //this is write into the note obj than into database   
+}
 
    public String getContent(){
     return content; 
@@ -86,6 +86,7 @@ public Note(){
 
   public void setContent(String content){
    this.content = content;
+   this.updatedAt = LocalDateTime.now(); //
    }
 
    public String getWeek(){
@@ -120,6 +121,67 @@ public Note(){
     this.status = status;
    }
 
+   public List<String> getTag(){
+    return tags;
+   }
+
+   public void setTags(List<String> tags){
+   this.tags = tags;
+   } 
+
+   public String getDifficulty(){
+   return difficulty;
+   } 
+
+   public void setDifficulty(String difficulty){
+   this.difficulty = difficulty;
+   }
+
+   public LocalDateTime getCreateAt(){
+   return createdAt;
+   }
+
+   //not create setter for outer to use
+
+   public LocalDateTime getUpdateAt(){
+   return updatedAt;
+   }
+
+   public LocalDateTime getStudyAt(){
+   return studyDate;
+   }
+
+   public String getSummary(){
+   return summary;
+   }
+
+   public void setSummary(String summary){
+   this.summary = summary;
+   }
+ 
+   public List<String> getKeyPoints(){
+   return keyPoints;
+   }
+
+   public void setKeyPoints(List<String> keyPoints){
+   this.keyPoints = keyPoints; 
+   }
+
+   public List<String> getCommands(){
+   return commands;
+   }
+
+   public void setCommands(List<String> commands){ 
+   this.commands = commands; 
+   }
+
+   public String getPracticeNotes(){
+   return practiceNotes;
+   }
+
+   public void setPracticeNotes(String practiceNotes){
+   this.practiceNotes = practiceNotes;
+   } 
+ 
 }
 
- 
