@@ -78,7 +78,7 @@ public Note(){
 
    public void setTitle(String title){
     this.title = title; //this is write into the note obj than into database   
-}
+    }
 
    public String getContent(){
     return content; 
