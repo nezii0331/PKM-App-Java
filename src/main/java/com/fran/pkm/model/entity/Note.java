@@ -58,7 +58,8 @@ public Note(){
 
    this.createdAt = LocalDateTime.now();
    this.updatedAt = LocalDateTime.now(); 
-   this.studyDate = null; // can be set later 
+   this.studyDate = null;   
+   // can be set later 
 
    this.summary = "";
    this.keyPoints = new ArrayList<>();

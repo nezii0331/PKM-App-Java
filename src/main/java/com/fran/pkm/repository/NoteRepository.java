@@ -14,7 +14,7 @@ import java.util.Optional;
 
 //According to the need to design the method sign
 public interface NoteRepository{
-    //basic CRUD(i.e. create, update, read, delete)
+    //basic CRUD(i.e. create, read, update, delete)
     Note create(Note note);
     boolean update(Note note);
     Optional<Note> findById(String id);
