@@ -79,18 +79,26 @@ public class FileNoteRepository implements NoteRepository{
         }
     }
 
+        //搜尋 title / content（大小寫不敏感）
+        @Override
+        public List<Note> searchByKeyword(String keyword){
+            if(keyword == null || null){
+                return findAll();
+            }
+            if(note.getTitle() && note.getContent() && note.getSubject() ){
+                note.searchByKeyword.add(results);
+            }
+        }
 
-        // @Override
-        // public List<Note> searchByKeyword(String keyword){
-        //     if(note.getCategory() && note.getContent() && note.getSubject() ){
-        //         return keyword;
-        //     }
-        // }
+        @Override
+        public List<Note> findByStatus(String status){
+            if(status == null){
+                return List.of; //return nothing
+            }
 
-        // @Override
-        // public List<Note> findByStatus(String status){
-        //     return note.getStatus();
-        // }
+            //TODO : IF NOT TAGS THEN RETURN LIST.OF()
+            return note.getStatus();
+        }
 
         // @Override
         // public List<Note> findByTag(String tag){
