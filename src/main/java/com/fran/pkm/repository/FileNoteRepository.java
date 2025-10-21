@@ -1,3 +1,5 @@
+//respond for taking datas from database
+//interact with databases（Database、JSON 、API、cache）
 package com.fran.pkm.repository;
 
 // import com.fasterxml.jackson.core.type.TypeReference;
