@@ -94,7 +94,7 @@ public class FileNoteRepository implements NoteRepository{
         // ======= Queries =======
         //Search title / content（toLowerCase()）;
         @Override
-        public List<Note> searchByKeyword(String keyword){
+        public List<Note> findByKeyword(String keyword){
             //avoid the Nullpointerexception
             if(keyword == null || keyword.isBlank()){
                 return findAll();
@@ -130,7 +130,7 @@ public class FileNoteRepository implements NoteRepository{
         }
 
         @Override
-        public List<Note> findByTag(String tag){
+        public List<Note> findByTags(String tag){
             if(tag == null || tag.isBlank()){
                 return List.of();
             }
@@ -138,7 +138,7 @@ public class FileNoteRepository implements NoteRepository{
             String t = tag.toLowerCase();
             List<Note> result = new ArrayList<>();
             for (Note n : cache.values()){
-                List<String> tags = n.getTag(); 
+                List<String> tags = n.getTags(); 
                 if (tags == null) {
                     continue; 
                 }

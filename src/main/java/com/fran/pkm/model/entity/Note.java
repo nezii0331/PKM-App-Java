@@ -122,7 +122,7 @@ public Note(){
     this.status = status;
    }
 
-   public List<String> getTag(){
+   public List<String> getTags(){
     return tags;
    }
 
@@ -143,7 +143,6 @@ public Note(){
    }
 
    //not create setter for outer to use
-
    public LocalDateTime getUpdatedAt(){
    return updatedAt;
    }
@@ -183,6 +182,21 @@ public Note(){
    public void setPracticeNotes(String practiceNotes){
    this.practiceNotes = practiceNotes;
    } 
+
+
+   public static Note newForCreate(String title, String content, String status){
+    if(title == null || title.isBlank()){
+        throw new IllegalArgumentException("Title is empty.");
+    }
+    Note n = new Note();
+    n.id = UUID.randomUUID().toString();
+    n.title = title;
+    n.content = content;
+    n.status = (status == null || status.isBlank()) ? "Learning" : status;
+    n.createdAt = LocalDateTime.now();
+    n.updatedAt = n.createdAt;
+    return n;
+   }
  
 }
 

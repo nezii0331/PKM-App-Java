@@ -14,24 +14,24 @@ public class RepositoryTest {
         n.setTitle("Java Map");
         n.setContent("Use HashMap for CRUD");
         n.setStatus("Learning");
-        n.getTag().add("java");
+        n.getTags().add("java");
         repo.create(n);
 
         Note z = new Note();
         z.setTitle("Spring Data JPA");
         z.setContent("Repository pattern");
         z.setStatus("Learning");
-        z.getTag().add("spring");
+        z.getTags().add("spring");
         repo.create(z);
 
         // Test searchByKeyword
-        assertEquals(1, repo.searchByKeyword("repo").size());
+        assertEquals(1, repo.findByKeyword("repo").size());
         
         // Test findByStatus
         assertEquals(2, repo.findByStatus("learning").size());
         
         // Test findByTag
-        assertEquals(1, repo.findByTag("spring").size());
+        assertEquals(1, repo.findByTags("spring").size());
         
         // Test findById
         assertTrue(repo.findById(n.getId()).isPresent());

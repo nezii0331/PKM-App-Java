@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.List;
 // import com.fran.pkm.repository*;
 
 public class NoteService{
@@ -20,27 +21,22 @@ public class NoteService{
     }
 
 	//as a user i would like to create a note(include title content tag and status)
-   	public Note createNote(Note note){
-	if(note == null || note.getTitle() == null|| note.getTitle().isBlank()){
-	throw new IllegalArgumentException("Title cannot be empty");
-	} //tell user title cannot be null
+   	//1.create
+    public Note createNote(Note note){
+        if(note == null || note.getTitle() == null|| note.getTitle().isBlank()){
+        throw new IllegalArgumentException("Title cannot be empty");
+        } //tell user title cannot be null
 
-    if (note.getId() == null || note.getId().isBlank()){
-        note.setId(UUID.randomUUID().toString());
-    }
-
-    note.setCreatedAt(LocalDateTime.now());
-    note.setUpdatedAt(LocalDateTime.now());
-
-    if(note.getStatus() == null || note.getStatus().isBlank()){
-        note.setStatus("Learning");
-    }
-    
-    return repo.create(note);
-
-
+        Note toSave = Note.newForCreate(
+            note.getTitle(),
+            note.getContent(),
+            note.getStatus()
+        );
+        
+        return repo.create(toSave);
 	}
 
+    //2.getnote
     //Read by id
     public Optional<Note> getNote(String id){
         if(id == null || id.isBlank()){
@@ -49,7 +45,7 @@ public class NoteService{
         return repo.findById(id);
     } 
 
-    //Delete
+    //3. Deletenote
     public boolean deleteNote(String id){
         if(id == null || id.isBlank()){   //input check??
             return false;
@@ -57,4 +53,43 @@ public class NoteService{
         return repo.delete(id);
     }
 
+    //4. updatenote
+    public boolean updateNote(Note note){
+        if(note == null || note.getId() == null || note.getId().isBlank()){
+            return false;
+        }
+        return repo.update(note);
+    }
+
+    //6.find all function
+    public List<Note> listNote(){
+        return repo.findAll();
+    }
+
+    public List<Note> searchNotes(String keyword){
+        if(keyword == null || keyword.isBlank()){
+            return List.of();
+        }
+        return repo.findByKeyword(keyword.trim());
+
+    }
+    
+    public List<Note> findByStatus(String status){
+        if(status == null || status.isBlank()){
+            return List.of();
+        }
+        return repo.findByStatus(status.trim());
+    }
+    
+    public List<Note> findByTags(String tag){
+        if(tag == null || tag.isBlank()){
+            return List.of();
+        }
+        return repo.findByTags(tag.trim());
+    }
+    
+    public List<Note> findByCreatedBetween(LocalDateTime start, LocalDateTime end){
+        return repo.findByCreatedBetween(start, end);
+    }
+    
 }

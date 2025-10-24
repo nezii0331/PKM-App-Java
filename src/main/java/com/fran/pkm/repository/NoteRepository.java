@@ -26,8 +26,8 @@ public interface NoteRepository{
 
 
     //while user searching
-    List<Note> searchByKeyword(String keyword);
+    List<Note> findByKeyword(String keyword);
     List<Note> findByStatus(String status);
-    List<Note> findByTag(String tag);
+    List<Note> findByTags(String tag);
     List<Note> findByCreatedBetween(LocalDateTime start, LocalDateTime end);
 }
