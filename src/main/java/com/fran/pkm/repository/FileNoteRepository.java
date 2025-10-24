@@ -5,9 +5,9 @@ package com.fran.pkm.repository;
 // import com.fasterxml.jackson.core.type.TypeReference;
 // import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fran.pkm.model.entity.Note;
+import org.springframework.stereotype.Repository;
 
 // import java.io.IOException;
-import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.io.File;
@@ -15,6 +15,7 @@ import java.io.File;
 
 
 //this is to implement the link methods use file to store
+@Repository
 public class FileNoteRepository implements NoteRepository{
     //IMPLEMENT THE METHODS IN NOTEREPOSITORY
     //identifier the notes.json
@@ -102,8 +103,6 @@ public class FileNoteRepository implements NoteRepository{
             String k = keyword.toLowerCase(); //all turn into not checking the ipper or lower cases.
             List<Note> result = new ArrayList<>(); 
             for (Note n :cache.values()){  // takeout all the notes
-                String title = n.getTitle();
-                String content = n.getContent();
                 if (n.getTitle().toLowerCase().contains(k)||  //see whether title or content include that verbs
                 n.getContent().toLowerCase().contains(k)){
                     result.add(n); //if so then put it into the list.

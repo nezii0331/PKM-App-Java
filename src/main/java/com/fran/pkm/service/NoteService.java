@@ -4,14 +4,15 @@ package com.fran.pkm.service;
 
 import com.fran.pkm.model.entity.Note;
 import com.fran.pkm.repository.NoteRepository;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.List;
 // import com.fran.pkm.repository*;
 
+@Service
 public class NoteService{
 	private final NoteRepository repo;
 

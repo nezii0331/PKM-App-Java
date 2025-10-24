@@ -22,7 +22,7 @@ public interface NoteRepository{
     Optional<Note> findById(String id);
     List<Note> findAll();
     boolean delete(String id);
-    //use boolean-this way api can respond with 200/404
+    //use boolean-this way api can respond with 2   00/404
 
 
     //while user searching
