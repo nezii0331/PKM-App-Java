@@ -15,3 +15,24 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# ========== Java / Spring Boot ==========
+# build output
+target/
+out/
+build/
+
+# IDE & system files
+*.iml
+.idea/
+.vscode/
+*.class
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# ========== Maven ==========
+# Maven local repo files
+.mvn/wrapper/maven-wrapper.jar
