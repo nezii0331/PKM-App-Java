@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 // import java.time.LocalDateTime;
 import java.util.List;
 
-
+@CrossOrigin
 @RestController   //tell spring this is a API controller and then let return thing become JSON
 @RequestMapping(path = "/api/notes")  //PATH
 
