@@ -4,8 +4,8 @@ export default function NoteCard({ note }) {
     // Determine border color based on status
     const getStatusColor = (s) => {
         switch (s) {
-            case 'done': return 'var(--accent-primary)'; // Blue
-            case 'doing': return 'var(--accent-secondary)'; // Purple
+            case 'Idea': return 'var(--accent-primary)'; // Blue
+            case 'Active': return 'var(--accent-secondary)'; // Purple
             default: return '#999';
         }
     };
