@@ -30,7 +30,7 @@ export default function NoteForm({ onNoteCreated }) {
 
             const newNote = await createNote(payload);
             onNoteCreated(newNote); // Callback to parent
-            setForm({ title: "", content: "", status: "learning", tags: "" }); // Reset
+            setForm({ title: "", content: "", status: "Idea", tags: "" }); // Reset
         } catch (e) {
             setError("Failed to save note");
         } finally {
@@ -83,9 +83,9 @@ export default function NoteForm({ onNoteCreated }) {
                         value={form.status}
                         onChange={e => setForm({ ...form, status: e.target.value })}
                     >
-                        <option value="learning">Learning</option>
-                        <option value="doing">Doing</option>
-                        <option value="done">Done</option>
+                        <option value="Idea">Idea</option>
+                        <option value="Active">Active</option>
+                        <option value="Permanent">Permanent</option>
                     </select>
 
                     <input

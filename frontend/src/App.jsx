@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchNotes } from "./api/notes";
+import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import NoteCard from "./components/NoteCard";
 import NoteForm from "./components/NoteForm";
@@ -26,11 +27,7 @@ export default function App() {
       <Sidebar />
 
       <main className="content-area">
-        <header className="title-section">
-          <h1>My Knowledge Base</h1>
-          <p style={{ color: 'var(--text-muted)' }}>Manage your learning journey.</p>
-        </header>
-
+        <Header />
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <NoteForm onNoteCreated={addNote} />
 

@@ -5,15 +5,15 @@ export default function Sidebar() {
         <aside className="sidebar-area glass-nav">
             <div className="logo-section" style={{ marginBottom: '2rem' }}>
                 <h2 style={{ fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span>PKM App</span>
+                    <span>Note App</span>
                 </h2>
                 <p style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    Second Brain v1.0
+                    Brain v1.0
                 </p>
             </div>
 
             <nav className="flex-column">
-                {['All Notes', 'Learning', 'Doing', 'Done'].map((item, idx) => (
+                {['All Notes', 'Idea', 'Active', 'Permanent'].map((item, idx) => (
                     <div
                         key={item}
                         style={{
